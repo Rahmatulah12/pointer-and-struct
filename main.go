@@ -138,6 +138,42 @@ func main() {
 
 	fmt.Println(allStudents)
 
+	/*
+		Deklarasi Struct dengan var
+	*/
+	var student4 struct {
+		name  string
+		grade int
+	}
+
+	student4.name = "Bahaya"
+	student4.grade = 10
+
+	var student5 = struct {
+		name  string
+		grade int
+	}{
+		"Rahmatulah Sidik",
+		12,
+	}
+
+	fmt.Println(student4)
+	fmt.Println(student5)
+
+	// memanggil nested struct
+	var student9 = student9{}
+	student9.person.name = "Aylin Fariha"
+	student9.person.age = 8
+	student9.person.gender = "Wanita"
+	var hobbies2 = []string{"nenen", "maen"}
+	student9.hobbies = hobbies2
+	fmt.Println(student9)
+
+	var p1 = struct {
+		name string
+		age  int
+	}{name: "Temon", age: 50}
+	fmt.Println(p1)
 }
 
 // pointer sebagai parameter
@@ -170,4 +206,29 @@ type person struct {
 type employee struct {
 	jabatan string
 	person
+}
+
+/*
+	Nested Struct
+*/
+type student9 struct {
+	person struct {
+		name   string
+		age    int
+		gender string
+	}
+	hobbies []string
+}
+
+/*
+
+	Deklarasi dan inisialisasi struct secara horizontal
+	tanda semi colon( ; ) digunakan sebagai pembatas deklarasi proptery
+	type person2 struct{ name string; age int; hobbies []string }
+
+*/
+type person2 struct {
+	name    string
+	age     int
+	hobbies []string
 }
